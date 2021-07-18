@@ -6,6 +6,9 @@ const lowerEl = document.querySelector("#lower")
 const numberEl = document.querySelector("#number")
 const symbolEl = document.querySelector("#symbol")
 const generateEl = document.querySelector("#generate")
+const empty = document.querySelector("#empty")
+
+let error_message = document.querySelector('#error')
 
 const upperLetters = 'ABCDEFGHIKLMNOPQRSTWXYZ';
 const lowerLetters = 'abcdefghijklmnopqrstwxyz';
@@ -29,13 +32,35 @@ function getSymbol(){
 }
 
 function generatePassword(){
-    const length = lengthEl.value;
+
+    let length = lengthEl.value;
     let password = '';
+
+    if(length > 100){
+      
+        error("Password length must be less than 100")
+        return false
+    }
+
+    if(length == 0){
+
+        error("Password length must be greater than zero")
+    }
+    if(!upperEl.checked && !lowerEl.checked && !numberEl.checked && !symbolEl.checked){
+        error("Please check atleast checkbox")
+        return false
+    }
+    
     for(let i = 0; i < length; i++) {
-        const x = generatex();
-            password +=  x;
+    const x = generatex();
+    password +=  x;
     }
     pwEl.innerText = password
+    error_message.innerText =""
+
+
+ 
+   
 
 }
 
@@ -53,7 +78,10 @@ function generatex(){
     if(symbolEl.checked){
         xs.push(getSymbol())
     }
-    if(xs.length === 0) return "";
+    if(xs.length === 0){
+      
+        return ""
+    };
     return xs[Math.floor(Math.random()* xs.length)]
 }
 
@@ -69,7 +97,7 @@ copyEl.addEventListener('click', ()=>{
     textarea.select();
     document.execCommand('copy');
     textarea.remove();
-    copyMessage('Password copied to clipboard');
+    copyMessage();
 })
 function copyMessage(){
     let small = document.querySelector('small');
@@ -78,3 +106,14 @@ function copyMessage(){
         small.style.display = 'none'
     }, 2000)
 }
+
+function  error(msg){
+    
+   
+    error_message.innerText = msg
+   error_message.classList ="empty"
+    setTimeout(function(){
+        error_message.innerText = ""
+    }, 4000)
+}
+
