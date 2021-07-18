@@ -47,7 +47,7 @@ function generatePassword(){
         error("Password length must be greater than zero")
     }
     if(!upperEl.checked && !lowerEl.checked && !numberEl.checked && !symbolEl.checked){
-        error("Please check atleast checkbox")
+        error("Please check atleast one checkbox")
         return false
     }
     
