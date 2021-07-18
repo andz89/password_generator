@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap');
+
+body{
+    background-color: teal;
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    display: flex;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+}
+
+.pw-container{
+    background-color: rgb(2, 100, 100);
+    width:500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+.pw {
+    background-color: teal;
+    display:flex;
+    font-size: 1rem;
+    align-items: center;
+    width: 100%;
+    padding: .9rem;
+    position: relative;
+  
+}
+.pw span{
+
+    word-wrap: break-word;
+    height:40px;
+    width: 380px;
+    overflow: auto;
+
+
+  
+}
+
+.pw button {
+    flex: 1;
+    background-color: #FE8B10;
+    color: #fff;
+    padding: 0.45rem 0.45rem;
+    border: none;
+    cursor: pointer;
+    top: 12px;
+    position: absolute;
+    right: 12px;
+   
+}
+.pw button:active {
+    transform: translateY(2px);
+}
+.pw-header{
+        padding: 1rem;
+        display:flex;
+        align-items: center;
+}
+.pw-body{
+        padding: 0 1rem .5rem 1rem;
+}
+
+.form-control{
+    padding: .2rem 0;
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+}
+input[type=checkbox]{
+    height: 17px;
+    width: 17px;
+  }
+  input[type=number]{
+    height: 17px;
+    width: 50px;
+  }
+
+.generate-pw{
+    background-color: #FF7211;
+    border: none;
+    color: #FFF;
+    width:100%;
+    height: 40px;
+    font-size: 1.4rem;
+    margin-top: 10px;
+
+}
+
+.pw-body button:active {
+    transform: translateY(2px);
+}
+
+small{
+    position: absolute;
+    right: 0;
+    top: -20px;
+    background-color: #333;
+    padding: 5px;
+    display: none;
+}
+.header{
+    text-align: center;
+    padding: 0;
+    margin-bottom: -20px;
+    font-size: 1.5rem;
+}
